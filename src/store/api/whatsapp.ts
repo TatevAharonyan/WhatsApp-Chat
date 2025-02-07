@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const BASE_URL = " https://7105.api.greenapi.com";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 // Функция для отправке сообщения
 export const sendMessage = async (
@@ -56,6 +56,7 @@ export const deleteMessage = async (
 };
 
 // Функция получить историю сообщений чата
+
 export const getHistoryMessages = async (
   idInstance: string,
   apiTokenInstance: string,

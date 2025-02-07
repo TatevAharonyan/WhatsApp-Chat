@@ -23,10 +23,11 @@ const ChatPage: React.FC = () => {
     loading,
   } = useChat(idInstance, apiTokenInstance);
 
+  //Получить данные собеседника
   const senderName = useMemo(() => {
     const info = chatMessages?.find((el) => el.type === "incoming");
     if (typeof info == "object") return info?.senderName;
-    return null;
+    return phoneNumber;
   }, [chatMessages]);
 
   return (
